@@ -1,0 +1,101 @@
+name: reggypos
+description: reggypos pos
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 2.0.97+117
+
+environment:
+  sdk: '>=3.0.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  get: ^4.6.5
+  dotted_border: ^2.0.3
+  share_plus: ^7.2.1
+  http: ^1.1.0
+  open_file: ^3.2.1
+  mime: ^1.0.2
+  switcher_button: ^0.0.4
+  path_provider: ^2.0.15
+  permission_handler: ^11.3.1
+  intl: ^0.18.0
+  pdf: ^3.10.4
+  shimmer: ^2.0.0
+  flutter_barcode_scanner:
+    git:
+      url: https://github.com/itsAyyazdev/flutter_barcode_scanner.git
+
+  fl_mlkit_scanning: ^5.1.0
+  barcode_widget: ^2.0.3
+  syncfusion_flutter_charts: 22.2.12
+  url_launcher: ^6.1.10
+  syncfusion_flutter_datepicker: 22.2.12
+  data_table_2: ^2.5.3
+  printing: ^5.11.0
+  excel: ^3.0.0
+  syncfusion_flutter_xlsio:
+  file_picker: ^5.3.2
+  flutter_secure_storage: ^9.0.0
+  flutter_link_previewer: ^3.2.2
+  cloud_firestore: ^4.4.3
+  firebase_storage:
+  sqflite: ^2.0.0+4
+  flutter_paystack:
+    git:
+      url: https://github.com/freddysundowner/flutter_paystack
+      ref: master
+  in_app_review: ^2.0.9
+  image_picker: ^1.0.4
+  image_cropper: ^5.0.0
+  firebase_core: ^2.23.0
+  loading_indicator: ^3.1.1
+  location: ^5.0.0
+  geocoding: ^2.1.1
+  firebase_dynamic_links: ^5.4.8
+  package_info_plus: ^4.0.0
+  intl_phone_number_input:
+  cached_network_image: ^3.2.0
+  intl_phone_field: ^3.2.0
+  flutter_local_notifications:
+  dio: ^5.4.0
+  flutter_stripe: ^9.5.0+1
+  flutter_svg: ^2.0.5
+  flutter_chat_bubble: ^2.0.2
+  country_code_picker: ^3.0.0
+  bluetooth_print: ^4.3.0
+  flutter_bluetooth_serial: ^0.4.0
+  uuid: ^4.4.0
+  flutter_chat_types:
+  path:
+  sunmi_printer_plus: ^2.1.3
+  cs50sdkupdate:
+    git:
+      url: https://github.com/freddysundowner/-cs50sdkupdate
+      ref: main
+  connectivity_plus: ^6.0.3
+  logger: ^2.4.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  flutter_launcher_icons: "^0.13.1"
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/logo.png"
+  min_sdk_android: 21
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/fonts/Helvetica.ttf
+    - assets/
+fonts:
+  - family: Montserrat
+    fonts:
+      - asset: assets/fonts/Helvetica.ttf
