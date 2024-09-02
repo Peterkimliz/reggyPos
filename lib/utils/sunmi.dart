@@ -95,14 +95,14 @@ class Sunmi {
     // await printLogoImage();
     await SunmiPrinter.lineWrap(1);
     await SunmiPrinter.lineWrap(1);
-    await SunmiPrinter.printText(receiptTitle ?? "Pointify Receipt",
+    await SunmiPrinter.printText(receiptTitle ?? "ReggyPos Receipt",
         style: SunmiStyle(
           fontSize: SunmiFontSize.XL,
           bold: true,
           align: SunmiPrintAlign.CENTER,
         ));
     await SunmiPrinter.printText(
-        userController.currentUser.value?.primaryShop?.name ?? "Pointify",
+        userController.currentUser.value?.primaryShop?.name ?? "ReggyPos",
         style: SunmiStyle(
           fontSize: SunmiFontSize.LG,
           bold: true,
@@ -190,7 +190,7 @@ class Sunmi {
         "Paid by: ${saleModel.paymentTag?.toUpperCase() ?? saleModel.paymentType?.toUpperCase()}");
     await SunmiPrinter.lineWrap(1); // creates one line space
     await SunmiPrinter.printText("Thank you for shopping with us");
-    await printText("Powered by Pointify POS");
+    await printText("Powered by ReggyPos");
     await SunmiPrinter.lineWrap(1);
     await SunmiPrinter.lineWrap(1);
     await SunmiPrinter.lineWrap(1);

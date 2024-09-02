@@ -34,7 +34,7 @@ class CreatePurchase extends StatelessWidget {
   Widget build(BuildContext context) {
     return PopScope(
         canPop: true,
-        onPopInvoked: (val) => purchaseController.invoice.value?.items!.clear(),
+        onPopInvokedWithResult: (val, Object? result) => purchaseController.invoice.value?.items!.clear(),
         child: Scaffold(
           backgroundColor: Colors.white,
           appBar: AppBar(

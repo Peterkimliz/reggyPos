@@ -244,8 +244,8 @@ class _SupportState extends State<Support> {
                   scheme: 'mailto',
                   path: settingsData["email"],
                   queryParameters: {
-                    'subject': 'Pointify Support',
-                    'body': 'Kindly help me on pointify'
+                    'subject': 'ReggyPos Support',
+                    'body': 'Kindly help me on reggyPos'
                   });
               String url = params.toString();
               if (await canLaunchUrl(Uri.parse(url))) {

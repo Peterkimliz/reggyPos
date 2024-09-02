@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 const _defaultDecoration = BoxDecoration(
   color: Colors.white,
@@ -33,9 +34,9 @@ class _AsyncProgressDialogState extends State<AsyncProgressDialog> {
   @override
   void initState() {
     widget.future.then((val) {
-      Navigator.of(context).pop(val);
+      Navigator.of(Get.context!).pop(val);
     }).catchError((e) {
-      Navigator.of(context).pop();
+      Navigator.of(Get.context!).pop();
       if (widget.onError != null) {
         widget.onError?.call(e);
       } else {
@@ -50,7 +51,7 @@ class _AsyncProgressDialogState extends State<AsyncProgressDialog> {
   Widget build(BuildContext context) {
     return PopScope(
       canPop: true,
-      onPopInvoked: (val) {
+      onPopInvokedWithResult: (val, Object? result) {
         Future(() {
           return false;
         });

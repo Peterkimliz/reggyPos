@@ -45,7 +45,7 @@ class BadStockPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return PopScope(
       canPop: true,
-      onPopInvoked: (val) {
+      onPopInvokedWithResult: (val, Object? result) {
         productController.showBadStockWidget.value = false;
         productController.selectedBadStock.value = null;
         productController.qtyController.clear();

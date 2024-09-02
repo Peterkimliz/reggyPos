@@ -61,7 +61,7 @@ class CustomerProfile extends StatelessWidget {
                               height: 5,
                             ),
                             const Text(
-                              "Welcome to Pointify online ",
+                              "Welcome to ReggyPos online ",
                               style:
                                   TextStyle(fontSize: 13, color: Colors.white),
                             )

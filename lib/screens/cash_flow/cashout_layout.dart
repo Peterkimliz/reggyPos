@@ -29,7 +29,7 @@ class CashOutLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PopScope(
-      onPopInvoked: (val)  {
+      onPopInvokedWithResult: (val, Object? result) {
         cashFlowController.clearInputs();
       },
       child: Scaffold(

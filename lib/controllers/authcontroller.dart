@@ -285,7 +285,7 @@ class AuthController {
         return AlertDialog(
           title: const Text('Update Available'),
           content: const Text(
-              'Pointify has new updated features, please update to get the most out of it.'),
+              'ReggyPos has new updated features, please update to get the most out of it.'),
           actions: [
             if (forceUpdate == false)
               TextButton(
@@ -536,6 +536,7 @@ class AuthController {
           type: "admin",
           email: emailController.text,
           password: passwordController.text);
+
       if (response["error"] != null) {
         loginuserLoad.value = false;
         showSnackBar(message: response["error"], color: Colors.red);

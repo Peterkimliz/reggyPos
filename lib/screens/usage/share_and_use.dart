@@ -136,7 +136,7 @@ class ShareAndUse extends StatelessWidget {
                         userController.currentUser.value!.id!,
                         type: "app",
                         title:
-                            "Hello, Check out Pointify to manage your shops, sales, cashflow etc",
+                            "Hello, Check out ReggyPos to manage your shops, sales, cashflow etc",
                       )
                           .then((value) async {
                         await Share.share(value,

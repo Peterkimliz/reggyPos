@@ -92,15 +92,21 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Pointify:',
+      title: 'ReggyPos',
       debugShowCheckedModeBanner: false,
       scrollBehavior: AppScrollBehavior(),
       theme: ThemeData(
+        scaffoldBackgroundColor: Colors.white,
           primarySwatch: AppColors.mainColor,
           splashColor: Colors.transparent,
           hoverColor: Colors.transparent,
           highlightColor: Colors.transparent,
           splashFactory: NoSplash.splashFactory,
+        cardTheme: CardTheme(
+          color: Colors.white
+        )
+
+      
       ),
       initialBinding: AuthBinding(),
       home: const Landing(),

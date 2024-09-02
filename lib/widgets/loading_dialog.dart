@@ -12,7 +12,7 @@ class LoadingDialog {
         builder: (BuildContext context) {
           return PopScope(
             canPop: true,
-              onPopInvoked: (val) async => false,
+              onPopInvokedWithResult: (val, Object? result)  async => false,
               child: SimpleDialog(
                   key: key,
                   backgroundColor: Colors.white,

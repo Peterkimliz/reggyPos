@@ -34,7 +34,7 @@ class CreateSale extends StatelessWidget {
   Widget build(BuildContext context) {
     return PopScope(
         canPop: true,
-        onPopInvoked: (val) {
+        onPopInvokedWithResult: (val, Object? result) {
           salesController.receipt.value = null;
         },
         child: Obx(

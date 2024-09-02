@@ -23,7 +23,7 @@ class DynamicLinkService {
         appStoreId: '6456891671',
       ),
       socialMetaTagParameters: SocialMetaTagParameters(
-          title: title ?? "Pointify",
+          title: title ?? "ReggyPos",
           description: msg,
           imageUrl: Uri.parse(imageurl!)),
     );

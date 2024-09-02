@@ -62,7 +62,7 @@ class ProductShopImport extends StatelessWidget {
   Widget build(BuildContext context) {
     return PopScope(
       canPop: true,
-      onPopInvoked: (val) {
+      onPopInvokedWithResult: (val, Object? result) {
         stockTransferController.selectedProducts.value = [];
         stockTransferController.selectedProducts.refresh();
         productController.products.refresh();

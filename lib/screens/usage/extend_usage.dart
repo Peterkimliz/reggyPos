@@ -11,7 +11,7 @@ import '../../functions/functions.dart';
 import '../../models/package.dart';
 import '../../models/shop.dart';
 import '../../widgets/major_title.dart';
-import 'ShopsRenew.dart';
+import 'shops_renew.dart';
 
 class ExtendUsage extends StatelessWidget {
   final Shop? shop;

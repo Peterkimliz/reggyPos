@@ -31,7 +31,7 @@ class CashInLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return PopScope(
       canPop: true,
-      onPopInvoked: (val)  {
+      onPopInvokedWithResult: (val, Object? result) {
         cashflowController.clearInputs();
 
       },

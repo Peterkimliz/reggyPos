@@ -1,6 +1,6 @@
-# pointify
+# ReggyPos
 
-Pointify.
+ReggyPos.
 
 ## Getting Started
 

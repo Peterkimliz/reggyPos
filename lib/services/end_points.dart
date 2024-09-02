@@ -1,4 +1,5 @@
-const apiEndPoint = "https://staging.pointifypos.com/";
+// const apiEndPoint = "https://staging.pointifypos.com/";
+const apiEndPoint = "https://api.pointifypos.com/";
 
 class EndPoints {
   //AUTH

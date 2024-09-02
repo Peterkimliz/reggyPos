@@ -176,6 +176,7 @@ class CustomerInfoPage extends StatelessWidget {
                         children: [
                           TabBar(
                               controller: DefaultTabController.of(context),
+                              indicatorColor: AppColors.mainColor,
                               onTap: (index) {
                                 if (index == 0) {
                                   salesController.getSalesByDate(

@@ -13,9 +13,8 @@ import 'constants.dart';
 class Cs50PrinterSetup {
   final _cs50sdkupdatePlugin = Cs50sdkupdate();
   Future<void> _initPrinter() async {
-    try {
       await _cs50sdkupdatePlugin.printInit();
-    } catch (e) {}
+
   }
 
   Future<void> _printText(String str) async {
@@ -50,7 +49,7 @@ class Cs50PrinterSetup {
     await _printText(receiptTitle ?? "Cash Receipt");
     await _cs50sdkupdatePlugin.printSetAlign(1);
     await _printText(
-      userController.currentUser.value?.primaryShop?.name ?? "Pointify",
+      userController.currentUser.value?.primaryShop?.name ?? "ReggyPos",
     );
     await _printText("Phone No: ${saleModel.shopId?.owner?.phone ?? "000000"}");
     await _printText(
@@ -125,7 +124,7 @@ class Cs50PrinterSetup {
     await _printText("Paid by: ${saleModel.paymentType?.toUpperCase()}");
     await _printText("Served By: ${saleModel.attendant?.username ?? "admin"}");
     await _printText("Thank you for shopping with us");
-    await _printText("Powered by Pointify POS");
+    await _printText("Powered by ReggyPos");
     await _printText("contacts  ${settingsData["contact"]}");
     await _printText(" ");
     await _printText(" ");
