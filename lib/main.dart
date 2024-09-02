@@ -32,9 +32,7 @@ UserController userController = Get.put<UserController>(UserController());
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+  await Firebase.initializeApp();
 
   if (stripePublishKey.isNotEmpty) {
     Stripe.publishableKey = stripePublishKey;
