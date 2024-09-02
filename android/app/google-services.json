@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "321868996666",
-    "project_id": "pointify-9e51e",
-    "storage_bucket": "pointify-9e51e.appspot.com"
+    "project_number": "843842203982",
+    "project_id": "reggypos-1829f",
+    "storage_bucket": "reggypos-1829f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:321868996666:android:de9d54729d2e4ab8f59503",
+        "mobilesdk_app_id": "1:843842203982:android:6affb6cd5a41b9e6086e1f",
         "android_client_info": {
-          "package_name": "com.pointify.com"
+          "package_name": "com.reggypos.com"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDFzz1_9FxOLPU7Ax_2mF18cwMhLvgWxGM"
+          "current_key": "AIzaSyBneATFxZOkR8pwK6FGEJbxecscmBPM8l0"
         }
       ],
       "services": {

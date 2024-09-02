@@ -5,7 +5,6 @@ import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:get/get.dart';
 import 'package:reggypos/bindings.dart';
 import 'package:reggypos/controllers/authcontroller.dart';
-import 'package:reggypos/controllers/chat_controller.dart';
 import 'package:reggypos/controllers/customercontroller.dart';
 import 'package:reggypos/controllers/plancontroller.dart';
 import 'package:reggypos/controllers/productcontroller.dart';
@@ -83,7 +82,6 @@ class _MyAppState extends State<MyApp> {
       Get.put<ReportsController>(ReportsController());
 
   OrderController orderController = Get.put<OrderController>(OrderController());
-  ChatController chatController = Get.put<ChatController>(ChatController());
   @override
   void initState() {
     super.initState();

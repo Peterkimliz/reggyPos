@@ -19,7 +19,6 @@ import '../../controllers/salescontroller.dart';
 import '../../reports/net_profit_report.dart';
 import '../../reports/reports.dart';
 import '../../reports/sales/sales_report.dart';
-import '../../support/support.dart';
 import '../../utils/colors.dart';
 import '../../utils/helper.dart';
 import '../../widgets/major_title.dart';
@@ -86,7 +85,7 @@ class HomePage extends StatelessWidget {
         "icon": Icons.request_quote_outlined,
         "category": "accounts"
       },
-      {"title": "Support", "icon": Icons.help, "category": "support"},
+
     ];
     if (userController.currentUser.value?.usertype == "admin") {
       return enterpriseOperations;
@@ -926,11 +925,7 @@ class HomePage extends StatelessWidget {
           Get.to(() => Reports());
         }
         break;
-      case "support":
-        {
-          Get.to(() => const Support());
-        }
-        break;
+
     }
   }
 

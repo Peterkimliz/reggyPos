@@ -1,10 +1,7 @@
 import 'dart:async';
 import 'dart:io' show Platform;
-
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_chat_types/flutter_chat_types.dart' as types;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
 import 'package:in_app_review/in_app_review.dart';
@@ -18,7 +15,6 @@ import 'package:reggypos/screens/authentication/admin/admin_login.dart';
 import 'package:reggypos/screens/authentication/landing.dart';
 import 'package:reggypos/screens/home/home.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:uuid/uuid.dart';
 
 import '../functions/functions.dart';
 import '../models/usermodel.dart';
@@ -158,7 +154,6 @@ class AuthController {
             toDate: DateFormat('yyyy-MM-dd').format(DateTime.now()),
             shop: userController.currentUser.value?.primaryShop!.id!,
           );
-          chatsCheck();
           checkForUpdate();
           User().updateLastSeen();
         }
@@ -213,45 +208,7 @@ class AuthController {
     }
   }
 
-  chatsCheck() {
-    FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
-    DocumentReference docReference = firebaseFirestore
-        .collection("chats/")
-        .doc(userController.currentUser.value!.id);
-    docReference.snapshots().listen((DocumentSnapshot snapshot) async {
-      if (snapshot.exists) {
-        Map<String, dynamic> users = snapshot.data() as Map<String, dynamic>;
-        if (users["author"] == null) {
-          docReference.update({
-            "author": {
-              "name": userController.currentUser.value!.username,
-              "id": userController.currentUser.value!.id,
-            }
-          });
-        }
-        List unreadUsers = users["unreadUsers"] ?? [];
-        var count = users[userController.currentUser.value!.id!];
 
-        if (users["unreadUsers"] != null &&
-            unreadUsers.contains(userController.currentUser.value!.id)) {
-          userController.messagesCount.value = count.toString();
-          userController.messagesCount.refresh();
-        } else {
-          userController.messagesCount.value = '0';
-          userController.messagesCount.refresh();
-        }
-      } else {
-        docReference.set({
-          "author": {
-            "name": userController.currentUser.value!.username,
-            "id": userController.currentUser.value!.id,
-            "unreadUsers": [userController.currentUser.value!.id],
-            userController.currentUser.value!.id!: 0
-          }
-        });
-      }
-    });
-  }
 
   Future<void> checkForUpdate({String? app}) async {
     User().getSettings().then((value) async {
@@ -405,7 +362,7 @@ class AuthController {
           key: 'id', value: userController.currentUser.value?.id);
       userController.currentUser.refresh();
       await initUser();
-      authChat();
+
       clearDataFromTextFields();
       if (userController.currentUser.value?.primaryShop == null) {
         if (isSmallScreen(context)) {
@@ -427,41 +384,7 @@ class AuthController {
     }
   }
 
-  authChat() {
-    FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
 
-    final user = types.User(
-      id: userController.currentUser.value!.id!,
-    );
-
-    firebaseFirestore
-        .collection("chats")
-        .doc(userController.currentUser.value!.id)
-        .collection("messages")
-        .add(types.TextMessage(
-          author: user,
-          createdAt: DateTime.now().millisecondsSinceEpoch,
-          id: const Uuid().v4(),
-          text: "Welcome ${userController.currentUser.value!.username}",
-        ).toJson());
-    firebaseFirestore
-        .collection("chats")
-        .doc(userController.currentUser.value!.id)
-        .collection("messages")
-        .add(types.TextMessage(
-          author: user,
-          createdAt: DateTime.now().millisecondsSinceEpoch,
-          id: const Uuid().v4(),
-          text: "${settingsData["demolink"]}",
-        ).toJson());
-    firebaseFirestore
-        .collection("chats")
-        .doc(userController.currentUser.value!.id)
-        .set({
-      "unreadUsers": [userController.currentUser.value!.id],
-      userController.currentUser.value!.id!: 1
-    });
-  }
 
   Future<void> logOut() async {
     String id = userController.currentUserId.value;
