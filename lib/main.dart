@@ -22,7 +22,6 @@ import 'controllers/ordercontroller.dart';
 import 'controllers/paymentcontroller.dart';
 import 'controllers/shopcontroller.dart';
 import 'controllers/stockcontroller.dart';
-import 'firebase_options.dart';
 
 AndroidNotificationChannel channel = channel;
 FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
@@ -98,7 +97,7 @@ class _MyAppState extends State<MyApp> {
           hoverColor: Colors.transparent,
           highlightColor: Colors.transparent,
           splashFactory: NoSplash.splashFactory,
-        cardTheme: CardTheme(
+        cardTheme: const CardTheme(
           color: Colors.white
         )
 
